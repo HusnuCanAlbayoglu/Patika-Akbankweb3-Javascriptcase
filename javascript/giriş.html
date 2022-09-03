@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ODD OR EVEN EXAMPLE</title>
+        
+    </head>
+    <body style="background: #f1f2f6;">
+    <div class="container">
+      <h2>ODD OR EVEN EXAMPLE</h2>
+      <form>
+          <div class="form-group">
+            <label>Number:</label>
+            <input type="text" class="form-control" id="sayi" >
+            <br>
+            <small class="form-text text-muted">Returns the sum of the digits of the number you entered.</small>
+          </div>
+          <div class="form-group">
+            <label>Sum of the Figure:</label>
+            <input type="text" class="form-control" id="final" disabled>
+          </div>
+          
+          <div class="form-group">
+
+            <label>Odd or Even:</label>
+            <input type="text" class="form-control" id="Result" disabled>
+
+          </div>
+          <button id="hesapla" type="button" class="btn btn-primary">Calculate</button>
+        </form>
+    </div>
+           
+    <script>
+        var sayi=document.querySelector("#sayi");
+        var sonuc=document.querySelector("#sonuc");
+        var hesapla=document.querySelector("#hesapla");
+        
+        hesapla.onclick=function()
+        {
+            var adet = 0,toplam=0;
+            var num=Number(sayi.value);
+            console.log(num);
+            while(num != 0)
+            {
+               toplam=(num%10)+toplam;
+               num =Math.floor(num / 10);
+                ++adet;
+            }
+            final.value=toplam;
+
+            if(toplam%2==0)
+                {
+                    Result.value =  "even";
+                }
+            else
+                {  
+                    Result.value =  "odd";
+                }
+      
+        } 
+      
+     
+    </script>
+        
+    </body>
+</html>
